@@ -1,9 +1,3 @@
-# x
-.eslintrc.json
-package-lock.json
-.gitignore
-next.config.js
-
 # dependencies
 /node_modules
 /.pnp
