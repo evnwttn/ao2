@@ -11,7 +11,7 @@ export default function Home() {
 
         <title>ao | album organizer</title>
       </Head>
-      <>ao</>
+      <>yoyoyoyoyo big test hello</>
     </>
   );
 }
