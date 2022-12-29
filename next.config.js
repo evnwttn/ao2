@@ -7,7 +7,7 @@ if (isGithubActions) {
   const repo = process.env.GITHUB_REPOSITORY.replace(/.*?\//, "");
 
   assetPrefix = `/ao2/`;
-  basePath = `/ao2/`;
+  basePath = `/ao2`;
 }
 
 module.exports = {
