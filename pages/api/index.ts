@@ -1,1 +1,0 @@
-export { defaultHandler } from "./defaultHandler";
