@@ -1,1 +1,1 @@
-export * from "./defaultHandler";
+export { defaultHandler } from "./defaultHandler";
