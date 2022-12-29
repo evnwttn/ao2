@@ -1,4 +1,5 @@
 import Head from "next/head";
+import { Splash } from "./components/Splash";
 
 export default function Home() {
   return (
@@ -11,7 +12,7 @@ export default function Home() {
 
         <title>ao | album organizer</title>
       </Head>
-      <>yoyoyoyoyo big test hello</>
+      <Splash />
     </>
   );
 }
