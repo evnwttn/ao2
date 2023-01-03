@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { ThemeProvider, Box } from "@mui/material";
-import { appTheme } from "../styles/index";
+import { ModalButton } from "./index";
+import { appTheme, inline } from "../styles/index";
 
 export const Splash = () => {
   const [isActiveUser, setIsActiveUser] = useState<boolean>(false);
@@ -18,7 +19,9 @@ export const Splash = () => {
 
   return (
     <Box>
-      <ThemeProvider theme={appTheme}></ThemeProvider>
+      <ThemeProvider theme={appTheme}>
+        <Box></Box>
+      </ThemeProvider>
     </Box>
   );
 };
