@@ -1,4 +1,5 @@
 import React, { Dispatch, SetStateAction } from "react";
+import { Divider, Box } from "@mui/material";
 import { palette, inline } from "../styles/index";
 
 interface ModalContentProps {
@@ -13,4 +14,6 @@ export const ModalContent = ({
   isActiveUser,
   setModalId,
   setIsActiveUser,
-}: ModalContentProps) => {};
+}: ModalContentProps) => {
+  return <Box>{`${modalId}`}</Box>;
+};
