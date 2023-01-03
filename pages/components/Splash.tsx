@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { ThemeProvider, Box } from "@mui/material";
-import appTheme from "../../styles/theme";
+import { appTheme } from "../../styles/index";
 
 export const Splash = () => {
   const [isActiveUser, setIsActiveUser] = useState<boolean>(false);

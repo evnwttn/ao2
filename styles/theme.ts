@@ -1,7 +1,7 @@
 import { createTheme } from "@mui/material";
 import { palette } from "./styles";
 
-const appTheme = createTheme({
+export const appTheme = createTheme({
   palette: {
     primary: {
       main: palette._black,
@@ -119,5 +119,3 @@ const appTheme = createTheme({
     },
   },
 });
-
-export default appTheme;

@@ -1,2 +1,2 @@
 export * from "./styles";
-export * from "./theme";
+export { appTheme } from "./theme";
