@@ -10,6 +10,7 @@ export const Splash = () => {
 
   const handleOpenModal = (id: string) => {
     setModalId(id);
+    alert(id);
   };
 
   const handleClose = () => {
@@ -18,9 +19,29 @@ export const Splash = () => {
   };
 
   return (
-    <Box>
+    <Box sx={inline.homeSx.mainDiv}>
       <ThemeProvider theme={appTheme}>
-        <Box></Box>
+        {/* MODALBASE */}
+        <Box sx={inline.homeSx.cornerDiv}>
+          <ModalButton
+            buttonText={"About"}
+            handleOpenModal={(id: string) => handleOpenModal(id)}
+          />
+          <ModalButton
+            buttonText={"Contact"}
+            handleOpenModal={(id: string) => handleOpenModal(id)}
+          />
+        </Box>
+        <Box sx={inline.homeSx.centerDiv}>
+          <ModalButton
+            buttonText={"New"}
+            handleOpenModal={(id: string) => handleOpenModal(id)}
+          />
+          <ModalButton
+            buttonText={"Load"}
+            handleOpenModal={(id: string) => handleOpenModal(id)}
+          />
+        </Box>
       </ThemeProvider>
     </Box>
   );
