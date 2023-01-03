@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { ThemeProvider, Box } from "@mui/material";
 import { ModalButton } from "./index";
 import { appTheme, inline } from "../styles/index";
@@ -10,7 +10,6 @@ export const Splash = () => {
 
   const handleOpenModal = (id: string) => {
     setModalId(id);
-    alert(id);
   };
 
   const handleClose = () => {

@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { Splash } from "../components/Splash";
+import { Splash } from "../components/index";
 
 export default function Home() {
   return (
