@@ -10,6 +10,7 @@ export const Splash = () => {
 
   const handleOpenModal = (id: string) => {
     setModalId(id);
+    setIsModalOpen(true);
   };
 
   const handleCloseModal = () => {

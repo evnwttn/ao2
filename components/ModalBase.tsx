@@ -26,7 +26,7 @@ export const ModalBase = ({
       sx={{ backdropFilter: "blur(1.5px)" }}
     >
       <>
-        Yo
+        {`${modalId}`}
         {/* <ModalText
           prompt={text}
           activeUser={activeUser}
