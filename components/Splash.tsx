@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { ThemeProvider, Box } from "@mui/material";
-import { ModalButton, ModalBase } from "./index";
+import { ModalButton, ModalBase, MainLogo } from "./index";
 import { appTheme, inline } from "../styles/index";
 
 export const Splash = () => {
@@ -40,6 +40,7 @@ export const Splash = () => {
           />
         </Box>
         <Box sx={inline.homeSx.centerDiv}>
+          <MainLogo />
           <ModalButton
             buttonText={"New"}
             handleOpenModal={(id: string) => handleOpenModal(id)}
