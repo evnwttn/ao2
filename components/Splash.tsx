@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { ThemeProvider, Box } from "@mui/material";
-import { ModalButton } from "./index";
+import { ModalButton, ModalBase } from "./index";
 import { appTheme, inline } from "../styles/index";
 
 export const Splash = () => {
@@ -12,7 +12,7 @@ export const Splash = () => {
     setModalId(id);
   };
 
-  const handleClose = () => {
+  const handleCloseModal = () => {
     setModalId("");
     setIsModalOpen(false);
   };
@@ -20,7 +20,14 @@ export const Splash = () => {
   return (
     <Box sx={inline.homeSx.mainDiv}>
       <ThemeProvider theme={appTheme}>
-        {/* MODALBASE */}
+        <ModalBase
+          isModalOpen={isModalOpen}
+          handleCloseModal={handleCloseModal}
+          modalId={modalId}
+          setModalId={setModalId}
+          // activeUser={activeUser}
+          // setActiveUser={setActiveUser}
+        />
         <Box sx={inline.homeSx.cornerDiv}>
           <ModalButton
             buttonText={"About"}
