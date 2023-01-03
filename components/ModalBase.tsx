@@ -3,19 +3,21 @@ import { Modal } from "@mui/material";
 // import { ModalText } from "./index";
 
 interface ModalBaseProps {
-  isModalOpen: boolean;
-  handleCloseModal(): any;
   modalId: string;
+  isModalOpen: boolean;
+  isActiveUser: boolean;
+  handleCloseModal(): any;
   setModalId: Dispatch<SetStateAction<string>>;
-  //   activeUser: any;
-  //   setActiveUser: any;
+  setIsActiveUser: Dispatch<SetStateAction<boolean>>;
 }
 
 export const ModalBase = ({
+  modalId,
+  isActiveUser,
   isModalOpen,
   handleCloseModal,
-  modalId,
   setModalId,
+  setIsActiveUser,
 }: ModalBaseProps) => {
   return (
     <Modal
@@ -24,6 +26,7 @@ export const ModalBase = ({
       sx={{ backdropFilter: "blur(1.5px)" }}
     >
       <>
+        Yo
         {/* <ModalText
           prompt={text}
           activeUser={activeUser}

@@ -21,12 +21,12 @@ export const Splash = () => {
     <Box sx={inline.homeSx.mainDiv}>
       <ThemeProvider theme={appTheme}>
         <ModalBase
+          modalId={modalId}
+          isActiveUser={isActiveUser}
           isModalOpen={isModalOpen}
           handleCloseModal={handleCloseModal}
-          modalId={modalId}
           setModalId={setModalId}
-          // activeUser={activeUser}
-          // setActiveUser={setActiveUser}
+          setIsActiveUser={setIsActiveUser}
         />
         <Box sx={inline.homeSx.cornerDiv}>
           <ModalButton
