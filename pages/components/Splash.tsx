@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { ThemeProvider, Box } from "@mui/material";
+import appTheme from "../../styles/theme";
 
 export const Splash = () => {
   const [isActiveUser, setIsActiveUser] = useState<boolean>(false);
@@ -14,5 +16,9 @@ export const Splash = () => {
     setIsModalOpen(false);
   };
 
-  return <>Big Test</>;
+  return (
+    <Box>
+      <ThemeProvider theme={appTheme}></ThemeProvider>
+    </Box>
+  );
 };
