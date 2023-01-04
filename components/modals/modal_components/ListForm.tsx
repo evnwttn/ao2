@@ -2,10 +2,7 @@ import { Box, TextField, IconButton } from "@mui/material";
 import AddCircleIcon from "@mui/icons-material/AddCircle";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import { inline } from "../../../styles";
-import { TitleList } from "./index";
-import { ParameterList } from "./index";
-
-// formerly NewModalContentListForm
+import { TitleList, ParamList } from "./index";
 
 export const ListForm = ({
   addInputArray,
@@ -30,7 +27,7 @@ export const ListForm = ({
             <>
               Enter or select the <b>session elements</b> you wish to include in
               the {sessionData.sessionTitle} session.
-              <ParameterList addParameterList={addParameterList} />
+              <ParamList addParameterList={addParameterList} />
             </>
           )}
         </Box>

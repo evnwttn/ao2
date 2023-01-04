@@ -2,8 +2,6 @@ import { Box, IconButton, List, ListItem, ListItemText } from "@mui/material";
 import ClearIcon from "@mui/icons-material/Clear";
 import { inline, palette } from "../../../styles";
 
-// formerly NewModalContentList
-
 interface TitleListProps {
   data: any;
   onClick: any;
