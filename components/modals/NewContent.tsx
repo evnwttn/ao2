@@ -109,7 +109,6 @@ export const NewContent = () => {
 
   const submitSessionData = (data: any) => {
     setSessionData({ ...data });
-    console.log(data);
   };
 
   useEffect(() => {
@@ -117,12 +116,12 @@ export const NewContent = () => {
       sessionData && textInput.current.value && setFormPrompt(formPrompt + 1);
       textInput.current.value = "";
     } else if (formPrompt === 2) {
-      sessionData && textInput.current.value && setFormPrompt(formPrompt + 1);
-      textInput.current.value = "";
+      sessionData.tracks && setFormPrompt(formPrompt + 1);
+      setInputArray([]);
     } else if (formPrompt === 3) {
       sessionData.parameters.length > 1 && setFormPrompt(formPrompt + 1);
     } else {
-      console.log("yo yo");
+      console.log(sessionData);
     }
   }, [sessionData]);
 
