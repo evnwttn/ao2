@@ -109,46 +109,30 @@ export const NewContent = () => {
 
   const submitSessionData = (data) => {
     setSessionData({ ...data });
+
+    switch (formPrompt) {
+      case 0 || 1:
+        sessionData && textInput.current.value && setFormPrompt(formPrompt + 1);
+        textInput.current.value = "";
+
+        break;
+      case 2:
+        sessionData.tracks && setFormPrompt(formPrompt + 1);
+        setInputArray([]);
+
+        break;
+      case 3:
+        sessionData.parameters.length > 1 && setFormPrompt(formPrompt + 1);
+
+        break;
+      case 4:
+        console.log("yo yo");
+
+        break;
+      default:
+        break;
+    }
   };
-
-  //   useEffect(() => {
-  //     let isMounted = true;
-
-  //     const sendDataRequest = () => {
-  //       axios
-  //         .post(
-  //           `https://ao-production.up.railway.app/grid/`,
-  //           {
-  //             ...sessionData,
-  //           },
-  //           {
-  //             withCredentials: true,
-  //           }
-  //         )
-  //         .then((data) => (isMounted ? setVerifiedSessionData(data.data) : null))
-  //         .then(() => (isMounted ? setStartNewSession(true) : null))
-  //         .catch((error) => {
-  //           console.log(error);
-  //         });
-  //     };
-
-  //     if (formPrompt <= 1) {
-  //       sessionData && textInput.current.value && setFormPrompt(formPrompt + 1);
-  //       textInput.current.value = "";
-  //     }
-  //     if (formPrompt === 2) {
-  //       sessionData.tracks && setFormPrompt(formPrompt + 1);
-  //       setInputArray([]);
-  //     }
-  //     if (formPrompt === 3) {
-  //       sessionData.parameters.length > 1 && setFormPrompt(formPrompt + 1);
-  //     }
-  //     if (formPrompt === 4) {
-  //       sendDataRequest();
-  //     }
-
-  //     return () => (isMounted = false);
-  //   }, [sessionData, formPrompt, axios]);
 
   return formPrompt <= 1 ? (
     <TextfieldForm
