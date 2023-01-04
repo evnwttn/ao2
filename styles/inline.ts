@@ -67,7 +67,7 @@ export const homeSx = {
   },
   centerDiv: {
     display: "flex",
-    paddingTop: "20vh",
+    paddingTop: "15.15vh",
     flexDirection: "column",
     alignContent: "center",
     justifyContent: "center",
