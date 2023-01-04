@@ -1,25 +1,5 @@
 import { palette } from "../../styles";
 
-// export interface TrackParams {
-//   parameter: string;
-//   colour: any;
-//   comment: string;
-// }
-
-// interface Track {
-//   title: string;
-//   parameters: TrackParams[];
-// }
-
-// interface Session {
-//   sessionTitle: string;
-//   author: string;
-//   tracks: Track[];
-//   parameters: string[];
-//   id: any;
-//   user: string;
-// }
-
 // export const defaultSession: Session[] = [
 //   {
 //     sessionTitle: "the dark side of the moon",
