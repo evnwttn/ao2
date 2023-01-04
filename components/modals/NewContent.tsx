@@ -107,32 +107,24 @@ export const NewContent = () => {
     }
   }, [triggerSubmit, handleSubmit]);
 
-  const submitSessionData = (data) => {
+  const submitSessionData = (data: any) => {
     setSessionData({ ...data });
-
-    switch (formPrompt) {
-      case 0 || 1:
-        sessionData && textInput.current.value && setFormPrompt(formPrompt + 1);
-        textInput.current.value = "";
-
-        break;
-      case 2:
-        sessionData.tracks && setFormPrompt(formPrompt + 1);
-        setInputArray([]);
-
-        break;
-      case 3:
-        sessionData.parameters.length > 1 && setFormPrompt(formPrompt + 1);
-
-        break;
-      case 4:
-        console.log("yo yo");
-
-        break;
-      default:
-        break;
-    }
+    console.log(data);
   };
+
+  useEffect(() => {
+    if (formPrompt <= 1) {
+      sessionData && textInput.current.value && setFormPrompt(formPrompt + 1);
+      textInput.current.value = "";
+    } else if (formPrompt === 2) {
+      sessionData && textInput.current.value && setFormPrompt(formPrompt + 1);
+      textInput.current.value = "";
+    } else if (formPrompt === 3) {
+      sessionData.parameters.length > 1 && setFormPrompt(formPrompt + 1);
+    } else {
+      console.log("yo yo");
+    }
+  }, [sessionData]);
 
   return formPrompt <= 1 ? (
     <TextfieldForm
