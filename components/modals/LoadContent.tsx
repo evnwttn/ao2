@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
+import Link from "next/link";
 import {
   Box,
   List,
@@ -16,30 +17,33 @@ export const LoadContent = () => {
     <Box sx={{ mx: "2vw" }}>
       <List>
         <ListItem key={darkSide.sessionTitle} disablePadding>
-          {/* <Link
-                to="/aogrid"
-                state={{ from: "load", data: session }}
-                style={inline.loadModalFontSx}
-              > */}
-          <ListItemButton
-            sx={{
-              span: {
-                fontSize: "1.25vw",
-              },
-              "&:hover": {
-                background: "transparent",
-                opacity: "0.7",
-                cursor: "pointer",
-              },
+          <Link
+            href={{
+              pathname: "/grid",
+              query: { session: darkSide as any },
             }}
-            disableRipple
+            style={inline.loadModalFontSx}
+            replace
           >
-            <ListItemIcon>
-              <ArrowRightIcon />
-            </ListItemIcon>
-            <ListItemText primary={darkSide.sessionTitle} />
-          </ListItemButton>
-          {/* </Link> */}
+            <ListItemButton
+              sx={{
+                span: {
+                  fontSize: "1.25vw",
+                },
+                "&:hover": {
+                  background: "transparent",
+                  opacity: "0.7",
+                  cursor: "pointer",
+                },
+              }}
+              disableRipple
+            >
+              <ListItemIcon>
+                <ArrowRightIcon />
+              </ListItemIcon>
+              <ListItemText primary={darkSide.sessionTitle} />
+            </ListItemButton>
+          </Link>
         </ListItem>
       </List>
     </Box>
