@@ -1,6 +1,7 @@
 import React, { Dispatch, SetStateAction } from "react";
 import { Divider, Box } from "@mui/material";
 import { palette, inline } from "../styles/index";
+import { AboutContent, ContactContent } from "./modals";
 
 interface ModalContentProps {
   modalId: string;
@@ -34,8 +35,15 @@ export const ModalContent = ({
       </Box>
       <Divider variant="middle" sx={{ color: palette._darkgrey }} />
       <Box sx={{ mt: "5vh" }}>
-        {`${modalId}`}
-        {/* {(prompt === "New" && <NewModalContent />) ||
+        {(modalId === "About" && <AboutContent />) ||
+          (modalId === "Contact" && <ContactContent />)}
+      </Box>
+    </Box>
+  );
+};
+
+{
+  /* {(prompt === "New" && <NewModalContent />) ||
           (prompt === "Load" && <LoadModalContent />) ||
           (prompt === "About" && <AboutModalContent />) ||
           (prompt === "Contact" && <ContactModalContent />) ||
@@ -47,8 +55,5 @@ export const ModalContent = ({
               setActiveUser={setActiveUser}
               setModalType={setModalType}
             />
-          ))} */}
-      </Box>
-    </Box>
-  );
-};
+          ))} */
+}

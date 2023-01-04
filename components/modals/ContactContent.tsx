@@ -8,15 +8,18 @@ export const ContactContent = () => {
     name: string;
     email: string;
     message: string;
-  }>({
-    name: "",
-    email: "",
-    message: "",
-  });
+  }>();
   const [formIsLoading, setFormIsLoading] = useState<boolean>(false);
   const nameField = useRef<HTMLInputElement>(null);
   const emailField = useRef<HTMLInputElement>(null);
   const messageField = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    if (formData) {
+      setFormIsLoading(true);
+      console.log(formData);
+    }
+  }, [formData]);
 
   useEffect(() => {
     setTimeout(() => {
@@ -52,13 +55,19 @@ export const ContactContent = () => {
       <IconButton
         disableRipple
         sx={{ cursor: "default" }}
-        onClick={() =>
-          setFormData({
-            name: nameField?.current?.value!,
-            email: emailField?.current?.value!,
-            message: messageField?.current?.value!,
-          })
-        }
+        onClick={() => {
+          if (
+            nameField.current.value &&
+            emailField.current.value &&
+            messageField.current.value
+          ) {
+            setFormData({
+              name: nameField.current.value,
+              email: emailField.current.value,
+              message: messageField.current.value,
+            });
+          }
+        }}
       >
         <CircularProgress
           size="2.33vw"
