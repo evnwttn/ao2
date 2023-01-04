@@ -1,10 +1,12 @@
 import React, { useState, useEffect, useRef } from "react";
+import { useRouter } from "next/router";
 import { useForm } from "react-hook-form";
 import { palette } from "../../styles";
 import { Session } from "../../types/Session";
 import { ListForm, TextfieldForm } from "./modal_components";
 
 export const NewContent = () => {
+  const router = useRouter();
   const [sessionData, setSessionData] = useState<any>();
   const [startNewSession, setStartNewSession] = useState<boolean>(false);
   const [formPrompt, setFormPrompt] = useState<number>(0);
@@ -110,17 +112,25 @@ export const NewContent = () => {
     setSessionData({ ...data });
   };
 
+  const submitGridData = () => {
+    console.log("fuck you");
+    router.replace({
+      pathname: "/grid",
+      query: sessionData as any,
+    });
+  };
+
   useEffect(() => {
     if (formPrompt <= 1) {
       sessionData && textInput.current.value && setFormPrompt(formPrompt + 1);
       textInput.current.value = "";
-    } else if (formPrompt === 2) {
+    }
+    if (formPrompt === 2) {
       sessionData.tracks && setFormPrompt(formPrompt + 1);
       setInputArray([]);
-    } else if (formPrompt === 3) {
-      sessionData.parameters.length > 1 && setFormPrompt(formPrompt + 1);
-    } else {
-      console.log(sessionData);
+    }
+    if (formPrompt === 3) {
+      sessionData.parameters.length > 1 && submitGridData();
     }
   }, [sessionData]);
 
@@ -144,6 +154,6 @@ export const NewContent = () => {
       inputArray={inputArray}
     />
   ) : (
-    startNewSession && <>Hello!</>
+    startNewSession && <></>
   );
 };
