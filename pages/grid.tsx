@@ -1,15 +1,8 @@
 import React from "react";
-import Head from "next/head";
+import { withRouter } from "next/router";
 
-export default function Grid() {
-  return (
-    <>
-      <Head>
-        <meta name="viewport" content="initial-scale=1, width=device-width" />
-        <meta name="theme-color" content="#272727" />
-        <title>ao | album organizer</title>
-      </Head>
-      <>Hello</>
-    </>
-  );
-}
+const Grid = (props) => {
+  return <>{console.log(props.router.query)}</>;
+};
+
+export default withRouter(Grid);
