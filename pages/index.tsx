@@ -1,4 +1,5 @@
 import Head from "next/head";
+import { Splash } from "../components";
 
 export default function Home() {
   return (
@@ -8,6 +9,7 @@ export default function Home() {
         <meta name="theme-color" content="#272727" />
         <title>ao | album organizer</title>
       </Head>
+      <Splash />
     </>
   );
 }
