@@ -2,7 +2,7 @@ import { Session } from "./types";
 import { palette } from "../../styles";
 
 export const darkSide: Session = {
-  title: "the dark side of the moon",
+  sessionTitle: "the dark side of the moon",
   author: "pink floyd",
   id: "default",
   user: "default",

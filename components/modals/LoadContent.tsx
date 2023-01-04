@@ -15,7 +15,7 @@ export const LoadContent = () => {
   return (
     <Box sx={{ mx: "2vw" }}>
       <List>
-        <ListItem key={darkSide.title} disablePadding>
+        <ListItem key={darkSide.sessionTitle} disablePadding>
           {/* <Link
                 to="/aogrid"
                 state={{ from: "load", data: session }}
@@ -37,7 +37,7 @@ export const LoadContent = () => {
             <ListItemIcon>
               <ArrowRightIcon />
             </ListItemIcon>
-            <ListItemText primary={darkSide.title} />
+            <ListItemText primary={darkSide.sessionTitle} />
           </ListItemButton>
           {/* </Link> */}
         </ListItem>
