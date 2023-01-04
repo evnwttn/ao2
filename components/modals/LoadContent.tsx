@@ -1,5 +1,5 @@
 import React from "react";
-import { useRouter } from "next/router";
+import { Link } from "react-router-dom";
 import {
   Box,
   List,
@@ -9,39 +9,38 @@ import {
   ListItemText,
 } from "@mui/material";
 import ArrowRightIcon from "@mui/icons-material/ArrowRight";
+import { inline } from "../../styles";
 import { darkSide } from "../sessions";
 
 export const LoadContent = () => {
-  const router = useRouter();
-
   return (
     <Box sx={{ mx: "2vw" }}>
       <List>
         <ListItem key={darkSide.sessionTitle} disablePadding>
-          <ListItemButton
-            onClick={() =>
-              router.replace({
-                pathname: "/grid",
-                query: { data: darkSide as const },
-              })
-            }
-            sx={{
-              span: {
-                fontSize: "1.25vw",
-              },
-              "&:hover": {
-                background: "transparent",
-                opacity: "0.7",
-                cursor: "pointer",
-              },
-            }}
-            disableRipple
+          <Link
+            to="/grid"
+            state={{ from: "load", data: darkSide }}
+            style={inline.loadModalFontSx}
           >
-            <ListItemIcon>
-              <ArrowRightIcon />
-            </ListItemIcon>
-            <ListItemText primary={darkSide.sessionTitle} />
-          </ListItemButton>
+            <ListItemButton
+              sx={{
+                span: {
+                  fontSize: "1.25vw",
+                },
+                "&:hover": {
+                  background: "transparent",
+                  opacity: "0.7",
+                  cursor: "pointer",
+                },
+              }}
+              disableRipple
+            >
+              <ListItemIcon>
+                <ArrowRightIcon />
+              </ListItemIcon>
+              <ListItemText primary={darkSide.sessionTitle} />
+            </ListItemButton>
+          </Link>
         </ListItem>
       </List>
     </Box>
