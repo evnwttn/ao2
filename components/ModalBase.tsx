@@ -31,6 +31,7 @@ export const ModalBase = ({
           isActiveUser={isActiveUser}
           setModalId={setModalId}
           setIsActiveUser={setIsActiveUser}
+          handleCloseModal={handleCloseModal}
         />
       </>
     </Modal>

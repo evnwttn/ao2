@@ -3,7 +3,11 @@ import { TextField, IconButton, Box, CircularProgress } from "@mui/material";
 import SendIcon from "@mui/icons-material/Send";
 import { inline, palette } from "../../styles";
 
-export const ContactContent = () => {
+interface ContactContentProps {
+  handleCloseModal(): any;
+}
+
+export const ContactContent = ({ handleCloseModal }: ContactContentProps) => {
   const [formData, setFormData] = useState<{
     name: string;
     email: string;
@@ -17,6 +21,7 @@ export const ContactContent = () => {
   useEffect(() => {
     if (formData) {
       setFormIsLoading(true);
+      handleCloseModal();
       console.log(formData);
     }
   }, [formData]);

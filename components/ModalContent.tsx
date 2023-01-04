@@ -8,6 +8,7 @@ interface ModalContentProps {
   isActiveUser: boolean;
   setModalId: Dispatch<SetStateAction<string>>;
   setIsActiveUser: Dispatch<SetStateAction<boolean>>;
+  handleCloseModal(): any;
 }
 
 export const ModalContent = ({
@@ -15,6 +16,7 @@ export const ModalContent = ({
   isActiveUser,
   setModalId,
   setIsActiveUser,
+  handleCloseModal,
 }: ModalContentProps) => {
   return (
     <Box
@@ -36,7 +38,9 @@ export const ModalContent = ({
       <Divider variant="middle" sx={{ color: palette._darkgrey }} />
       <Box sx={{ mt: "5vh" }}>
         {(modalId === "About" && <AboutContent />) ||
-          (modalId === "Contact" && <ContactContent />)}
+          (modalId === "Contact" && (
+            <ContactContent handleCloseModal={handleCloseModal} />
+          ))}
       </Box>
     </Box>
   );
