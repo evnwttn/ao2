@@ -9,12 +9,13 @@ import {
 } from "@mui/material";
 import ArrowRightIcon from "@mui/icons-material/ArrowRight";
 import { inline } from "../../styles";
+import { darkSide } from "../sessions";
 
 export const LoadContent = () => {
   return (
     <Box sx={{ mx: "2vw" }}>
       <List>
-        <ListItem key={`dsotm`} disablePadding>
+        <ListItem key={darkSide.title} disablePadding>
           {/* <Link
                 to="/aogrid"
                 state={{ from: "load", data: session }}
@@ -36,7 +37,7 @@ export const LoadContent = () => {
             <ListItemIcon>
               <ArrowRightIcon />
             </ListItemIcon>
-            <ListItemText primary={`dsotm`} />
+            <ListItemText primary={darkSide.title} />
           </ListItemButton>
           {/* </Link> */}
         </ListItem>
