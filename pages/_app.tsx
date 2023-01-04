@@ -1,10 +1,11 @@
 import { useState } from "react";
+import { Session } from "../types";
 import "../styles/styles.css";
 
 export default function MyApp({ Component, pageProps }) {
-  const [dataTest, setDataTest] = useState<any>("yo");
+  const [gridData, setGridData] = useState<Session>();
 
   return (
-    <Component {...pageProps} dataTest={dataTest} setDataTest={setDataTest} />
+    <Component {...pageProps} dataTest={gridData} setDataTest={setGridData} />
   );
 }

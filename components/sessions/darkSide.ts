@@ -1,4 +1,4 @@
-import { Session } from "./types";
+import { Session } from "../../types";
 import { palette } from "../../styles";
 
 export const darkSide: Session = {

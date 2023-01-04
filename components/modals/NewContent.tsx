@@ -1,12 +1,11 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useForm } from "react-hook-form";
 import { palette } from "../../styles";
-import { Session } from "../sessions/types/Session";
+import { Session } from "../../types/Session";
 import { ListForm, TextfieldForm } from "./modal_components";
 
 export const NewContent = () => {
   const [sessionData, setSessionData] = useState<any>();
-  const [verifiedSessionData, setVerifiedSessionData] = useState<any>();
   const [startNewSession, setStartNewSession] = useState<boolean>(false);
   const [formPrompt, setFormPrompt] = useState<number>(0);
   const [triggerSubmit, setTriggerSubmit] = useState<number>(0);

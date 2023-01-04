@@ -22,7 +22,6 @@ export const LoadContent = () => {
             onClick={() =>
               router.replace({
                 pathname: "/grid",
-                query: { data: darkSide as any },
               })
             }
             sx={{
