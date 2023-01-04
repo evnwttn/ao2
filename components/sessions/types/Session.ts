@@ -1,7 +1,7 @@
 import { Track } from "./Track";
 
 export interface Session {
-  sessionTitle: string;
+  title: string;
   author: string;
   tracks: Track[];
   parameters: string[];
