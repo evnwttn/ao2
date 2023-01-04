@@ -1,7 +1,12 @@
 import React, { Dispatch, SetStateAction } from "react";
 import { Divider, Box } from "@mui/material";
 import { palette, inline } from "../styles/index";
-import { AboutContent, ContactContent, LoadContent } from "./modals";
+import {
+  AboutContent,
+  ContactContent,
+  NewContent,
+  LoadContent,
+} from "./modals";
 
 interface ModalContentProps {
   modalId: string;
@@ -41,6 +46,7 @@ export const ModalContent = ({
           (modalId === "Contact" && (
             <ContactContent handleCloseModal={handleCloseModal} />
           )) ||
+          (modalId === "New" && <NewContent />) ||
           (modalId === "Load" && <LoadContent />)}
       </Box>
     </Box>
