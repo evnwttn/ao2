@@ -10,6 +10,7 @@ import React, {
 import { useForm } from "react-hook-form";
 import { palette } from "../../styles";
 import { Session } from "../../types/Session";
+import { GridDataContext } from "../contexts";
 import { ListForm, TextfieldForm } from "./modal_components";
 
 interface NewContentProps {
@@ -17,6 +18,8 @@ interface NewContentProps {
 }
 
 export const NewContent = ({ setGridToggle }: NewContentProps) => {
+  const useGridDataContext = useContext(GridDataContext);
+  const [gridData, setGridData] = useState(useGridDataContext);
   const [sessionData, setSessionData] = useState<any>();
   const [startNewSession, setStartNewSession] = useState<boolean>(false);
   const [formPrompt, setFormPrompt] = useState<number>(0);
@@ -125,6 +128,11 @@ export const NewContent = ({ setGridToggle }: NewContentProps) => {
   const submitGridData = () => {
     setGridToggle(true);
     console.log("Submitting grid data...");
+
+    // setGridData({
+    //   ...gridData,
+    //   test: "test",
+    // })
   };
 
   useEffect(() => {
