@@ -5,5 +5,19 @@ export default function Grid() {
   const useGridDataContext = useContext(GridDataContext);
   const [gridData, setGridData] = useState(useGridDataContext);
 
-  return <>{console.log(gridData)}</>;
+  return (
+    <>
+      <button onClick={() => console.log(gridData)}>the rig</button>
+      <button
+        onClick={() =>
+          setGridData({
+            ...gridData,
+            test: "tset",
+          })
+        }
+      >
+        test
+      </button>
+    </>
+  );
 }
