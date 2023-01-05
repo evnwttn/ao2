@@ -1,9 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Head from "next/head";
 import { Splash, Grid } from "../components";
 
 export default function Home() {
   const [gridToggle, setGridToggle] = useState<boolean>(false);
+
+  useEffect(() => {
+    console.log(gridToggle);
+  }, [gridToggle]);
 
   return (
     <>

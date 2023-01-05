@@ -1,5 +1,4 @@
 import React, { useState, useContext, SetStateAction, Dispatch } from "react";
-import { useRouter } from "next/router";
 import {
   Box,
   List,
@@ -19,8 +18,6 @@ interface LoadContextProps {
 export const LoadContent = ({ setGridToggle }: LoadContextProps) => {
   const useGridDataContext = useContext(GridDataContext);
   const [gridData, setGridData] = useState(useGridDataContext);
-
-  const router = useRouter();
 
   return (
     <Box sx={{ mx: "2vw" }}>

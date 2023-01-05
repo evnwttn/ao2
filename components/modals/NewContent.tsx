@@ -1,11 +1,12 @@
 import React, {
   useState,
-  useEffect,
   useRef,
-  Dispatch,
+  useEffect,
+  useContext,
   SetStateAction,
+  Dispatch,
 } from "react";
-import { useRouter } from "next/router";
+
 import { useForm } from "react-hook-form";
 import { palette } from "../../styles";
 import { Session } from "../../types/Session";
@@ -16,7 +17,6 @@ interface NewContentProps {
 }
 
 export const NewContent = ({ setGridToggle }: NewContentProps) => {
-  const router = useRouter();
   const [sessionData, setSessionData] = useState<any>();
   const [startNewSession, setStartNewSession] = useState<boolean>(false);
   const [formPrompt, setFormPrompt] = useState<number>(0);
@@ -123,11 +123,8 @@ export const NewContent = ({ setGridToggle }: NewContentProps) => {
   };
 
   const submitGridData = () => {
-    console.log("fuck you");
-    router.replace({
-      pathname: "/grid",
-      query: sessionData as any,
-    });
+    setGridToggle(true);
+    console.log("Submitting grid data...");
   };
 
   useEffect(() => {
