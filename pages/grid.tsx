@@ -12,7 +12,7 @@ export default function Grid() {
         onClick={() =>
           setGridData({
             ...gridData,
-            test: "tset",
+            test: "test",
           })
         }
       >

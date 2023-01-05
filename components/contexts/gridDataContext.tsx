@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState } from "react";
+import React, { createContext, useState } from "react";
 
 export const GridDataContext = createContext<any>({});
 
@@ -13,5 +13,3 @@ export const GridDataProvider = ({ children }) => {
     </GridDataContext.Provider>
   );
 };
-
-// export const useGridDataContext = useContext(GridDataContext);
