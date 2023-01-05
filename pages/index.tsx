@@ -5,6 +5,19 @@ import { Session } from "../types";
 
 export default function Home() {
   const [gridData, setGridData] = useState<Session>();
+  const [isActiveUser, setIsActiveUser] = useState<boolean>(false);
+  const [isModalOpen, setIsModalOpen] = useState<boolean>(true);
+  const [modalId, setModalId] = useState<string>("");
+
+  const handleOpenModal = (id: string) => {
+    setModalId(id);
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setModalId("");
+    setIsModalOpen(false);
+  };
 
   return (
     <>
@@ -16,7 +29,16 @@ export default function Home() {
       {gridData ? (
         <Grid gridData={gridData} />
       ) : (
-        <Splash setGridData={setGridData} />
+        <Splash
+          isActiveUser={isActiveUser}
+          setIsActiveUser={setIsActiveUser}
+          isModalOpen={isModalOpen}
+          modalId={modalId}
+          setModalId={setModalId}
+          handleOpenModal={handleOpenModal}
+          handleCloseModal={handleCloseModal}
+          setGridData={setGridData}
+        />
       )}
     </>
   );

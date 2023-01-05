@@ -5,24 +5,26 @@ import { appTheme, inline } from "../styles/index";
 import { Session } from "../types";
 
 interface SplashProps {
+  isActiveUser: boolean;
+  setIsActiveUser: Dispatch<SetStateAction<boolean>>;
+  isModalOpen: boolean;
+  modalId: string;
+  setModalId: Dispatch<SetStateAction<string>>;
+  handleOpenModal(id: string): any;
+  handleCloseModal(): any;
   setGridData: Dispatch<SetStateAction<Session>>;
 }
 
-export const Splash = ({ setGridData }: SplashProps) => {
-  const [isActiveUser, setIsActiveUser] = useState<boolean>(false);
-  const [isModalOpen, setIsModalOpen] = useState<boolean>(true);
-  const [modalId, setModalId] = useState<string>("");
-
-  const handleOpenModal = (id: string) => {
-    setModalId(id);
-    setIsModalOpen(true);
-  };
-
-  const handleCloseModal = () => {
-    setModalId("");
-    setIsModalOpen(false);
-  };
-
+export const Splash = ({
+  isActiveUser,
+  setIsActiveUser,
+  isModalOpen,
+  modalId,
+  setModalId,
+  handleOpenModal,
+  handleCloseModal,
+  setGridData,
+}: SplashProps) => {
   return (
     <Box sx={inline.homeSx.mainDiv}>
       <ThemeProvider theme={appTheme}>
