@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, SetStateAction, Dispatch } from "react";
 import { useRouter } from "next/router";
 import {
   Box,
@@ -12,7 +12,11 @@ import ArrowRightIcon from "@mui/icons-material/ArrowRight";
 import { GridDataContext } from "../contexts/gridDataContext";
 import { darkSide } from "../sessions";
 
-export const LoadContent = () => {
+interface LoadContextProps {
+  setGridToggle: Dispatch<SetStateAction<boolean>>;
+}
+
+export const LoadContent = ({ setGridToggle }: LoadContextProps) => {
   const useGridDataContext = useContext(GridDataContext);
   const [gridData, setGridData] = useState(useGridDataContext);
 
@@ -20,7 +24,6 @@ export const LoadContent = () => {
 
   return (
     <Box sx={{ mx: "2vw" }}>
-      <button onClick={() => console.log(gridData)}>the rig</button>
       <button
         onClick={() =>
           setGridData({

@@ -9,6 +9,7 @@ interface ModalBaseProps {
   handleCloseModal(): any;
   setModalId: Dispatch<SetStateAction<string>>;
   setIsActiveUser: Dispatch<SetStateAction<boolean>>;
+  setGridToggle: Dispatch<SetStateAction<boolean>>;
 }
 
 export const ModalBase = ({
@@ -18,6 +19,7 @@ export const ModalBase = ({
   handleCloseModal,
   setModalId,
   setIsActiveUser,
+  setGridToggle,
 }: ModalBaseProps) => {
   return (
     <Modal
@@ -32,6 +34,7 @@ export const ModalBase = ({
           setModalId={setModalId}
           setIsActiveUser={setIsActiveUser}
           handleCloseModal={handleCloseModal}
+          setGridToggle={setGridToggle}
         />
       </>
     </Modal>

@@ -1,9 +1,13 @@
-import React, { useState } from "react";
+import React, { Dispatch, SetStateAction, useState } from "react";
 import { ThemeProvider, Box } from "@mui/material";
 import { ModalButton, ModalBase, MainLogo } from "./index";
 import { appTheme, inline } from "../styles/index";
 
-export const Splash = () => {
+interface SplashProps {
+  setGridToggle: Dispatch<SetStateAction<boolean>>;
+}
+
+export const Splash = ({ setGridToggle }: SplashProps) => {
   const [isActiveUser, setIsActiveUser] = useState<boolean>(false);
   const [isModalOpen, setIsModalOpen] = useState<boolean>(true);
   const [modalId, setModalId] = useState<string>("");
@@ -28,6 +32,7 @@ export const Splash = () => {
           handleCloseModal={handleCloseModal}
           setModalId={setModalId}
           setIsActiveUser={setIsActiveUser}
+          setGridToggle={setGridToggle}
         />
         <Box sx={inline.homeSx.cornerDiv}>
           <ModalButton

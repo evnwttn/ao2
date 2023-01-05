@@ -1,7 +1,10 @@
+import React, { useState } from "react";
 import Head from "next/head";
-import { Splash } from "../components";
+import { Splash, Grid } from "../components";
 
 export default function Home() {
+  const [gridToggle, setGridToggle] = useState<boolean>(false);
+
   return (
     <>
       <Head>
@@ -9,7 +12,7 @@ export default function Home() {
         <meta name="theme-color" content="#272727" />
         <title>ao | album organizer</title>
       </Head>
-      <Splash />
+      {gridToggle ? <Grid /> : <Splash setGridToggle={setGridToggle} />}
     </>
   );
 }
