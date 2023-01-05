@@ -1,9 +1,9 @@
-import React from "react";
-import { useRouter } from "next/router";
+import React, { useState, useContext } from "react";
+import { GridDataContext } from "../components/contexts/gridDataContext";
 
 export default function Grid() {
-  const router = useRouter();
-  const data = router.query;
+  const useGridDataContext = useContext(GridDataContext);
+  const [gridData, setGridData] = useState(useGridDataContext);
 
-  return <>{console.log(data)}</>;
+  return <>{console.log(gridData)}</>;
 }

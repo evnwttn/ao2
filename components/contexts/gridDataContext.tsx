@@ -1,10 +1,10 @@
 import React, { createContext, useContext, useState } from "react";
 
-const GridDataContext = createContext({});
+export const GridDataContext = createContext({});
 
 export const GridDataProvider = ({ children }) => {
   const [gridData, setGridData] = useState({
-    darkMode: false,
+    data: "test",
   });
 
   return (
