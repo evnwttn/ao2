@@ -1,5 +1,11 @@
 import React from "react";
+import { Session } from "../types";
 
-export const Grid = () => {
-  return <>Hello!! {console.log("Hello!")}</>;
+interface GridProps {
+  gridData: Session;
+}
+
+export const Grid = ({ gridData }: GridProps) => {
+  console.log(gridData);
+  return <></>;
 };

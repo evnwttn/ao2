@@ -13,7 +13,11 @@ export default function Home() {
         <meta name="theme-color" content="#272727" />
         <title>ao | album organizer</title>
       </Head>
-      {gridData ? <Grid /> : <Splash setGridData={setGridData} />}
+      {gridData ? (
+        <Grid gridData={gridData} />
+      ) : (
+        <Splash setGridData={setGridData} />
+      )}
     </>
   );
 }
