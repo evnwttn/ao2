@@ -1,7 +1,8 @@
 import React from "react";
+import { Session } from "../types";
 
 interface GridProps {
-  gridData: any;
+  gridData: Session;
 }
 
 export const Grid = ({ gridData }: GridProps) => {
