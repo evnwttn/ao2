@@ -1,13 +1,14 @@
-import React from "react";
+import React, { Dispatch, SetStateAction } from "react";
 import { Button, Box, Divider } from "@mui/material";
 import { inline, palette } from "../styles";
 import { Session } from "../types";
 
 interface NavProps {
   gridData: Session;
+  handleOpenModal(id: string): any;
 }
 
-export const AONav = ({ gridData, setModalType }: NavProps) => {
+export const Nav = ({ gridData, handleOpenModal }: NavProps) => {
   return (
     <Box sx={inline.navSx.container}>
       <Box sx={{ ...inline.navSx.text, textTransform: "uppercase" }}>
@@ -22,7 +23,7 @@ export const AONav = ({ gridData, setModalType }: NavProps) => {
       <Button
         disableRipple
         sx={{ mt: "0.5vw" }}
-        onClick={() => setModalType("Nav")}
+        onClick={() => handleOpenModal("Nav")}
         variant="text"
         color={"inherit"}
       >
@@ -32,7 +33,7 @@ export const AONav = ({ gridData, setModalType }: NavProps) => {
         <Button
           disableRipple
           sx={{ ...inline.logoSx.nav, textTransform: "lowercase" }}
-          onClick={() => setModalType("Menu")}
+          onClick={() => handleOpenModal("Menu")}
           variant="text"
           color={"inherit"}
         >

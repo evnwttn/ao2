@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Head from "next/head";
 import { Splash, Grid } from "../components";
 import { Session } from "../types";
@@ -27,9 +27,9 @@ export default function Home() {
         <title>ao | album organizer</title>
       </Head>
       {gridData ? (
-        <Grid gridData={gridData} />
-      ) : (
-        <Splash
+        <Grid
+          gridData={gridData}
+          setGridData={setGridData}
           isActiveUser={isActiveUser}
           setIsActiveUser={setIsActiveUser}
           isModalOpen={isModalOpen}
@@ -37,7 +37,17 @@ export default function Home() {
           setModalId={setModalId}
           handleOpenModal={handleOpenModal}
           handleCloseModal={handleCloseModal}
+        />
+      ) : (
+        <Splash
           setGridData={setGridData}
+          isActiveUser={isActiveUser}
+          setIsActiveUser={setIsActiveUser}
+          isModalOpen={isModalOpen}
+          modalId={modalId}
+          setModalId={setModalId}
+          handleOpenModal={handleOpenModal}
+          handleCloseModal={handleCloseModal}
         />
       )}
     </>
