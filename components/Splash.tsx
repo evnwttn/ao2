@@ -2,9 +2,10 @@ import React, { Dispatch, SetStateAction, useState } from "react";
 import { ThemeProvider, Box } from "@mui/material";
 import { ModalButton, ModalBase, MainLogo } from "./index";
 import { appTheme, inline } from "../styles/index";
+import { Session } from "../types";
 
 interface SplashProps {
-  setGridData: Dispatch<SetStateAction<any>>;
+  setGridData: Dispatch<SetStateAction<Session>>;
 }
 
 export const Splash = ({ setGridData }: SplashProps) => {

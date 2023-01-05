@@ -7,6 +7,7 @@ import {
   NewContent,
   LoadContent,
 } from "./modals";
+import { Session } from "../types";
 
 interface ModalContentProps {
   modalId: string;
@@ -14,7 +15,7 @@ interface ModalContentProps {
   setModalId: Dispatch<SetStateAction<string>>;
   setIsActiveUser: Dispatch<SetStateAction<boolean>>;
   handleCloseModal(): any;
-  setGridData: Dispatch<SetStateAction<any>>;
+  setGridData: Dispatch<SetStateAction<Session>>;
 }
 
 export const ModalContent = ({

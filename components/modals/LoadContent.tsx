@@ -9,9 +9,10 @@ import {
 } from "@mui/material";
 import ArrowRightIcon from "@mui/icons-material/ArrowRight";
 import { darkSide } from "../sessions";
+import { Session } from "../../types";
 
 interface LoadContextProps {
-  setGridData: Dispatch<SetStateAction<any>>;
+  setGridData: Dispatch<SetStateAction<Session>>;
 }
 
 export const LoadContent = ({ setGridData }: LoadContextProps) => {

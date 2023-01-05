@@ -11,7 +11,7 @@ import { Session } from "../../types/Session";
 import { ListForm, TextfieldForm } from "./modal_components";
 
 interface NewContentProps {
-  setGridData: Dispatch<SetStateAction<any>>;
+  setGridData: Dispatch<SetStateAction<Session>>;
 }
 
 export const NewContent = ({ setGridData }: NewContentProps) => {

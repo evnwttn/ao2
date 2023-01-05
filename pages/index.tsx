@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
 import Head from "next/head";
 import { Splash, Grid } from "../components";
+import { Session } from "../types";
 
 export default function Home() {
   const [gridToggle, setGridToggle] = useState<boolean>(false);
-  const [gridData, setGridData] = useState<any>();
+  const [gridData, setGridData] = useState<Session>();
 
   useEffect(() => console.log(gridData), [gridData]);
 
