@@ -1,4 +1,4 @@
-import React, { useState, useContext, SetStateAction, Dispatch } from "react";
+import React, { SetStateAction, Dispatch } from "react";
 import {
   Box,
   List,
@@ -8,33 +8,23 @@ import {
   ListItemText,
 } from "@mui/material";
 import ArrowRightIcon from "@mui/icons-material/ArrowRight";
-import { GridDataContext } from "../contexts/gridDataContext";
 import { darkSide } from "../sessions";
 
 interface LoadContextProps {
-  setGridToggle: Dispatch<SetStateAction<boolean>>;
+  setGridData: Dispatch<SetStateAction<any>>;
 }
 
-export const LoadContent = ({ setGridToggle }: LoadContextProps) => {
-  const useGridDataContext = useContext(GridDataContext);
-  const [gridData, setGridData] = useState(useGridDataContext);
-
-  const submitGridData = () => {
-    setGridToggle(true);
-    console.log("Submitting grid data...");
-
-    // setGridData({
-    //   ...gridData,
-    //   test: "test",
-    // })
-  };
-
+export const LoadContent = ({ setGridData }: LoadContextProps) => {
   return (
     <Box sx={{ mx: "2vw" }}>
       <List>
         <ListItem key={darkSide.sessionTitle} disablePadding>
           <ListItemButton
-            onClick={() => submitGridData()}
+            onClick={() =>
+              setGridData({
+                ...darkSide,
+              })
+            }
             sx={{
               span: {
                 fontSize: "1.25vw",

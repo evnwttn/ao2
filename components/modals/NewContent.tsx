@@ -2,26 +2,20 @@ import React, {
   useState,
   useRef,
   useEffect,
-  useContext,
   SetStateAction,
   Dispatch,
 } from "react";
-
 import { useForm } from "react-hook-form";
 import { palette } from "../../styles";
 import { Session } from "../../types/Session";
-import { GridDataContext } from "../contexts";
 import { ListForm, TextfieldForm } from "./modal_components";
 
 interface NewContentProps {
-  setGridToggle: Dispatch<SetStateAction<boolean>>;
+  setGridData: Dispatch<SetStateAction<any>>;
 }
 
-export const NewContent = ({ setGridToggle }: NewContentProps) => {
-  const useGridDataContext = useContext(GridDataContext);
-  const [gridData, setGridData] = useState(useGridDataContext);
+export const NewContent = ({ setGridData }: NewContentProps) => {
   const [sessionData, setSessionData] = useState<any>();
-  const [startNewSession, setStartNewSession] = useState<boolean>(false);
   const [formPrompt, setFormPrompt] = useState<number>(0);
   const [triggerSubmit, setTriggerSubmit] = useState<number>(0);
   const [inputArray, setInputArray] = useState<any[]>([]);
@@ -126,13 +120,9 @@ export const NewContent = ({ setGridToggle }: NewContentProps) => {
   };
 
   const submitGridData = () => {
-    setGridToggle(true);
-    console.log("Submitting grid data...");
-
-    // setGridData({
-    //   ...gridData,
-    //   test: "test",
-    // })
+    setGridData({
+      ...sessionData,
+    });
   };
 
   useEffect(() => {
@@ -157,7 +147,7 @@ export const NewContent = ({ setGridToggle }: NewContentProps) => {
       formPrompt={formPrompt}
       register={register}
     />
-  ) : formPrompt <= 3 ? (
+  ) : (
     <ListForm
       addInputArray={addInputArray}
       removeInputArray={removeInputArray}
@@ -168,7 +158,5 @@ export const NewContent = ({ setGridToggle }: NewContentProps) => {
       textInput={textInput}
       inputArray={inputArray}
     />
-  ) : (
-    startNewSession && <></>
   );
 };

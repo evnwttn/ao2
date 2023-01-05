@@ -1,13 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Head from "next/head";
 import { Splash, Grid } from "../components";
+import { GridDataProvider } from "../components/contexts/gridDataContext";
 
 export default function Home() {
   const [gridToggle, setGridToggle] = useState<boolean>(false);
-
-  useEffect(() => {
-    console.log(gridToggle);
-  }, [gridToggle]);
 
   return (
     <>
@@ -16,7 +13,9 @@ export default function Home() {
         <meta name="theme-color" content="#272727" />
         <title>ao | album organizer</title>
       </Head>
-      {gridToggle ? <Grid /> : <Splash setGridToggle={setGridToggle} />}
+      <GridDataProvider>
+        {gridToggle ? <Grid /> : <Splash setGridToggle={setGridToggle} />}
+      </GridDataProvider>
     </>
   );
 }

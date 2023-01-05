@@ -1,11 +1,9 @@
 import React, { createContext, useState } from "react";
 
-export const GridDataContext = createContext<any>({});
+export const GridDataContext = createContext<any>();
 
 export const GridDataProvider = ({ children }) => {
-  const [gridData, setGridData] = useState({
-    data: "test",
-  });
+  const [gridData, setGridData] = useState();
 
   return (
     <GridDataContext.Provider value={{ gridData, setGridData }}>
