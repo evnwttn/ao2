@@ -23,7 +23,8 @@ export const NewContent = ({ setGridData }: NewContentProps) => {
   const { register, handleSubmit, setValue } = useForm<Session>({
     defaultValues: {
       parameters: ["title"],
-      id: undefined,
+      id: "default",
+      user: "default",
     },
   });
 

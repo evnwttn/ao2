@@ -14,7 +14,7 @@ interface ModalContentProps {
   setModalId: Dispatch<SetStateAction<string>>;
   setIsActiveUser: Dispatch<SetStateAction<boolean>>;
   handleCloseModal(): any;
-  setGridToggle: Dispatch<SetStateAction<boolean>>;
+  setGridData: Dispatch<SetStateAction<any>>;
 }
 
 export const ModalContent = ({
@@ -23,7 +23,7 @@ export const ModalContent = ({
   setModalId,
   setIsActiveUser,
   handleCloseModal,
-  setGridToggle,
+  setGridData,
 }: ModalContentProps) => {
   return (
     <Box
@@ -48,8 +48,8 @@ export const ModalContent = ({
           (modalId === "Contact" && (
             <ContactContent handleCloseModal={handleCloseModal} />
           )) ||
-          (modalId === "New" && <NewContent setGridToggle={setGridToggle} />) ||
-          (modalId === "Load" && <LoadContent setGridToggle={setGridToggle} />)}
+          (modalId === "New" && <NewContent setGridData={setGridData} />) ||
+          (modalId === "Load" && <LoadContent setGridData={setGridData} />)}
       </Box>
     </Box>
   );

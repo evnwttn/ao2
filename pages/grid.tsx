@@ -1,9 +1,5 @@
-import React, { useState, useContext } from "react";
-import { GridDataContext } from "../components/contexts/gridDataContext";
+import React from "react";
 
-export default function Grid() {
-  const useGridDataContext = useContext(GridDataContext);
-  const [gridData, setGridData] = useState(useGridDataContext);
-
+export default function Grid({ gridData }) {
   return <></>;
 }

@@ -4,10 +4,10 @@ import { ModalButton, ModalBase, MainLogo } from "./index";
 import { appTheme, inline } from "../styles/index";
 
 interface SplashProps {
-  setGridToggle: Dispatch<SetStateAction<boolean>>;
+  setGridData: Dispatch<SetStateAction<any>>;
 }
 
-export const Splash = ({ setGridToggle }: SplashProps) => {
+export const Splash = ({ setGridData }: SplashProps) => {
   const [isActiveUser, setIsActiveUser] = useState<boolean>(false);
   const [isModalOpen, setIsModalOpen] = useState<boolean>(true);
   const [modalId, setModalId] = useState<string>("");
@@ -32,7 +32,7 @@ export const Splash = ({ setGridToggle }: SplashProps) => {
           handleCloseModal={handleCloseModal}
           setModalId={setModalId}
           setIsActiveUser={setIsActiveUser}
-          setGridToggle={setGridToggle}
+          setGridData={setGridData}
         />
         <Box sx={inline.homeSx.cornerDiv}>
           <ModalButton
