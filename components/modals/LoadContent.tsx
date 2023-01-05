@@ -19,26 +19,22 @@ export const LoadContent = ({ setGridToggle }: LoadContextProps) => {
   const useGridDataContext = useContext(GridDataContext);
   const [gridData, setGridData] = useState(useGridDataContext);
 
+  const submitGridData = () => {
+    setGridToggle(true);
+    console.log("Submitting grid data...");
+
+    // setGridData({
+    //   ...gridData,
+    //   test: "test",
+    // })
+  };
+
   return (
     <Box sx={{ mx: "2vw" }}>
-      <button
-        onClick={() =>
-          setGridData({
-            ...gridData,
-            test: "test",
-          })
-        }
-      >
-        test
-      </button>
       <List>
         <ListItem key={darkSide.sessionTitle} disablePadding>
           <ListItemButton
-            onClick={() =>
-              router.replace({
-                pathname: "/grid",
-              })
-            }
+            onClick={() => submitGridData()}
             sx={{
               span: {
                 fontSize: "1.25vw",
