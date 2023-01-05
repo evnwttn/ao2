@@ -4,10 +4,7 @@ import { Splash, Grid } from "../components";
 import { Session } from "../types";
 
 export default function Home() {
-  const [gridToggle, setGridToggle] = useState<boolean>(false);
   const [gridData, setGridData] = useState<Session>();
-
-  useEffect(() => console.log(gridData), [gridData]);
 
   return (
     <>
@@ -16,7 +13,7 @@ export default function Home() {
         <meta name="theme-color" content="#272727" />
         <title>ao | album organizer</title>
       </Head>
-      {gridToggle ? <Grid /> : <Splash setGridData={setGridData} />}
+      {gridData ? <Grid /> : <Splash setGridData={setGridData} />}
     </>
   );
 }
