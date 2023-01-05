@@ -1,11 +1,9 @@
 import React from "react";
-import { Session } from "../types";
 
 interface GridProps {
-  gridData: Session;
+  gridData: any;
 }
 
 export const Grid = ({ gridData }: GridProps) => {
-  console.log(gridData);
-  return <></>;
+  return <>Hello!! {console.log("Hello!")}</>;
 };
