@@ -1,9 +1,14 @@
-import React from "react";
+import React, { SetStateAction } from "react";
 import { Box } from "@mui/system";
 import { Spoke } from "./index";
 import { inline, palette } from "../styles";
 
-export const ColorWheel = ({ handleClick, openComment }: any) => {
+interface ColorWheelProps {
+  handleClick(value: SetStateAction<string>): void;
+  openComment(value: SetStateAction<string>): void;
+}
+
+export const ColorWheel = ({ handleClick, openComment }: ColorWheelProps) => {
   return (
     <Box>
       <Box>
