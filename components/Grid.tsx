@@ -45,15 +45,3 @@ export const Grid = ({
     </Box>
   );
 };
-
-// <Box sx={gridSx.container}>
-//   <ModalBase
-//     open={open}
-//     handleClose={handleClose}
-//     text={modalType}
-//     setModalType={setModalType}
-//   />
-//   <ThemeProvider theme={aotheme}>
-// <Nav gridData={gridData} setModalType={setModalType} />
-//     <Box sx={gridSx.dom}>
-//       </Box>
