@@ -42,18 +42,6 @@ export const AOGrid = ({
     defaultValues: gridData,
   });
 
-  const [open, setOpen] = useState<boolean>(true);
-  const [modalType, setModalType] = useState<string>("");
-
-  useEffect(() => {
-    modalType !== "" ? setOpen(true) : setOpen(false);
-  }, [modalType]);
-
-  const handleClose = () => {
-    setOpen(false);
-    setModalType("");
-  };
-
   const [cellOpen, setCellOpen] = useState<any>();
   const [cellClosed, setCellClosed] = useState<any>();
 
