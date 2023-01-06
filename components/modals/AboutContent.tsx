@@ -1,12 +1,17 @@
 import React from "react";
-import { Box } from "@mui/material";
-import { inline } from "../../styles";
+import { Box, Divider } from "@mui/material";
+import { inline, palette } from "../../styles";
 
 export const AboutContent = () => {
   return (
     <Box sx={inline.modalCenteredSx}>
-      A VISUAL ALBUM MANAGEMENT TOOLKIT DESIGNED TO TRACK &amp; MONITOR
-      PROGRESS, FOSTER COLLABORATION AND AID IN THE SMASHING OF GOALS.
+      <Box>
+        THIS IS A CLIENT-SIDE ONLY VERSION DEVELOPED USING NEXT 13, TYPESCRIPT &
+        MUI FOR DEMONSTRATION PURPOSES.
+        <br />
+        <br />
+        YOU WILL NOT BE ABLE TO SAVE YOUR SESSIONS.
+      </Box>
       <Box sx={{ mt: "2vw" }}>
         TO BEGIN START A <b>NEW</b> PROJECT.
       </Box>
