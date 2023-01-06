@@ -4,6 +4,7 @@ import { palette, inline } from "../styles/index";
 import {
   AboutContent,
   ContactContent,
+  HelpContent,
   NewContent,
   LoadContent,
 } from "./modals";
@@ -49,6 +50,7 @@ export const ModalContent = ({
           (modalId === "Contact" && (
             <ContactContent handleCloseModal={handleCloseModal} />
           )) ||
+          (modalId === "Help" && <HelpContent />) ||
           (modalId === "New" && <NewContent setGridData={setGridData} />) ||
           (modalId === "Load" && <LoadContent setGridData={setGridData} />)}
       </Box>

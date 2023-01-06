@@ -1,4 +1,4 @@
-import React, { Dispatch, SetStateAction } from "react";
+import React from "react";
 import { Button, Box, Divider } from "@mui/material";
 import { inline, palette } from "../styles";
 import { Session } from "../types";
@@ -23,7 +23,7 @@ export const Nav = ({ gridData, handleOpenModal }: NavProps) => {
       <Button
         disableRipple
         sx={{ mt: "0.5vw" }}
-        onClick={() => handleOpenModal("Nav")}
+        onClick={() => handleOpenModal("Help")}
         variant="text"
         color={"inherit"}
       >
