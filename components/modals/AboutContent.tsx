@@ -1,6 +1,6 @@
 import React from "react";
-import { Box, Divider } from "@mui/material";
-import { inline, palette } from "../../styles";
+import { Box } from "@mui/material";
+import { inline } from "../../styles";
 
 export const AboutContent = () => {
   return (

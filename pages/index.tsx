@@ -7,7 +7,7 @@ export default function Home() {
   const [gridData, setGridData] = useState<Session>();
   const [isActiveUser, setIsActiveUser] = useState<boolean>(false);
   const [isModalOpen, setIsModalOpen] = useState<boolean>(true);
-  const [modalId, setModalId] = useState<string>("");
+  const [modalId, setModalId] = useState<string>("About");
 
   const handleOpenModal = (id: string) => {
     setModalId(id);
