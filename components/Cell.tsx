@@ -50,19 +50,6 @@ export const Cell = ({
   };
 
   useEffect(() => {
-    // const initialData = () => {
-    //   if (track.parameters) {
-    //     track.parameters.map(
-    //       (cell) =>
-    //         (cell.parameter === parameter && setCellColor(cell.colour)) ||
-    //         (cell.comment &&
-    //           cell.parameter === parameter &&
-    //           setCellComment(cell.comment))
-    //     );
-    //   }
-    // };
-    // initialData();
-
     const initData = () => {
       if (track.parameters) {
         track.parameters.forEach((cell) => {
