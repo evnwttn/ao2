@@ -11,6 +11,7 @@ export const Cell = ({
   toggleHovered,
   setHoverCell,
   hoverCell,
+  gridData,
   setCellOpen,
   setCellClosed,
 }) => {

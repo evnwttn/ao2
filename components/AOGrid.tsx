@@ -34,6 +34,63 @@ export const AOGrid = ({
   handleOpenModal,
   handleCloseModal,
 }: GridProps) => {
+  const [hoverCell, setHoverCell] = useState();
+  const [isHovered, setIsHovered] = useState(false);
+  const toggleHovered = () => setIsHovered(!isHovered);
+
+  const { setValue, handleSubmit } = useForm({
+    defaultValues: gridData,
+  });
+
+  const [open, setOpen] = useState(true);
+  const [modalType, setModalType] = useState("");
+
+  useEffect(() => {
+    modalType !== "" ? setOpen(true) : setOpen(false);
+  }, [modalType]);
+
+  const handleClose = () => {
+    setOpen(false);
+    setModalType("");
+  };
+
+  const [cellOpen, setCellOpen] = useState();
+  const [cellClosed, setCellClosed] = useState();
+
+  const updateSessionData = useCallback(
+    (updatedCell) => {
+      const updateTrackIndex = gridData.tracks.findIndex(
+        (track) => track.title === updatedCell.trackTitle
+      );
+
+      gridData.tracks[updateTrackIndex].parameters.forEach(
+        (paramTitle, paramIndex) => {
+          if (paramTitle.parameter === updatedCell.parameter) {
+            setValue(
+              `tracks.${updateTrackIndex}.parameters.${paramIndex}.colour`,
+              updatedCell.color
+            );
+            setValue(
+              `tracks.${updateTrackIndex}.parameters.${paramIndex}.comment`,
+              updatedCell.comment
+            );
+          }
+        }
+      );
+    },
+    [gridData.tracks, setValue, handleSubmit]
+  );
+
+  useEffect(() => {
+    if (cellOpen && cellClosed) {
+      Object.entries(cellOpen).forEach(([key]) => {
+        if (cellOpen[key] !== cellClosed[key]) {
+          updateSessionData(cellClosed);
+        }
+      });
+    }
+  }, [cellOpen, cellClosed, updateSessionData]);
+
   return (
     <Box sx={inline.gridSx.container}>
       <ThemeProvider theme={appTheme}>
@@ -47,7 +104,61 @@ export const AOGrid = ({
           setGridData={setGridData}
         />
         <Nav gridData={gridData} handleOpenModal={handleOpenModal} />
-        <Box sx={inline.gridSx.dom}></Box>
+        <Box sx={inline.gridSx.dom}>
+          <Grid container>
+            <Grid
+              sx={{
+                flexFlow: "row nowrap",
+                justifyContent: "center",
+              }}
+              container
+              spacing={"0.75vw"}
+            >
+              {gridData.parameters.map((parameter, index) => {
+                return (
+                  <Grid item sm={1} key={`${parameter}.${index}`}>
+                    <Box sx={inline.cellSx.paraCell}>{parameter}</Box>
+                  </Grid>
+                );
+              })}
+            </Grid>
+            {gridData.tracks.map((track, index) => {
+              return (
+                <Grid
+                  container
+                  sx={{
+                    display: "flex",
+                    flexFlow: "row nowrap",
+                    justifyContent: "center",
+                  }}
+                  key={`${track}.${index}`}
+                  spacing={"0.75vw"}
+                >
+                  {gridData.parameters.map((parameter) => {
+                    return parameter === `title` ? (
+                      <Grid item sm={1} key={`${parameter}.${index}`}>
+                        <Box sx={inline.cellSx.titleCell}>{track.title}</Box>
+                      </Grid>
+                    ) : (
+                      <Cell
+                        key={`${parameter}.${index}`}
+                        cell={{ track, parameter }}
+                        track={track}
+                        parameter={parameter}
+                        toggleHovered={toggleHovered}
+                        setHoverCell={setHoverCell}
+                        hoverCell={hoverCell}
+                        gridData={gridData}
+                        setCellOpen={setCellOpen}
+                        setCellClosed={setCellClosed}
+                      />
+                    );
+                  })}
+                </Grid>
+              );
+            })}
+          </Grid>
+        </Box>
       </ThemeProvider>
     </Box>
   );
