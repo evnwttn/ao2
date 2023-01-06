@@ -34,16 +34,16 @@ export const AOGrid = ({
   handleOpenModal,
   handleCloseModal,
 }: GridProps) => {
-  const [hoverCell, setHoverCell] = useState();
-  const [isHovered, setIsHovered] = useState(false);
+  const [hoverCell, setHoverCell] = useState<any>();
+  const [isHovered, setIsHovered] = useState<boolean>(false);
   const toggleHovered = () => setIsHovered(!isHovered);
 
   const { setValue, handleSubmit } = useForm({
     defaultValues: gridData,
   });
 
-  const [open, setOpen] = useState(true);
-  const [modalType, setModalType] = useState("");
+  const [open, setOpen] = useState<boolean>(true);
+  const [modalType, setModalType] = useState<string>("");
 
   useEffect(() => {
     modalType !== "" ? setOpen(true) : setOpen(false);
@@ -54,8 +54,8 @@ export const AOGrid = ({
     setModalType("");
   };
 
-  const [cellOpen, setCellOpen] = useState();
-  const [cellClosed, setCellClosed] = useState();
+  const [cellOpen, setCellOpen] = useState<any>();
+  const [cellClosed, setCellClosed] = useState<any>();
 
   const updateSessionData = useCallback(
     (updatedCell) => {

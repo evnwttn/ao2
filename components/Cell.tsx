@@ -1,8 +1,21 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Dispatch, SetStateAction } from "react";
 import { useForm } from "react-hook-form";
 import { Box, Grid, Popover } from "@mui/material/";
 import { CellPopover } from "./index";
 import { inline, palette } from "../styles";
+import { Session, Track } from "../types";
+
+interface CellProps {
+  cell: any;
+  track: Track;
+  parameter: any;
+  toggleHovered(): any;
+  setHoverCell: Dispatch<SetStateAction<any>>;
+  hoverCell: any;
+  gridData: Session;
+  setCellOpen: Dispatch<SetStateAction<any>>;
+  setCellClosed: Dispatch<SetStateAction<any>>;
+}
 
 export const Cell = ({
   cell,
@@ -14,7 +27,7 @@ export const Cell = ({
   gridData,
   setCellOpen,
   setCellClosed,
-}) => {
+}: CellProps) => {
   const { register, handleSubmit } = useForm();
   const [cellColor, setCellColor] = useState(palette._grey);
   const [cellComment, setCellComment] = useState("");

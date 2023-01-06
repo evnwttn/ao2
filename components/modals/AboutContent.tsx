@@ -10,6 +10,9 @@ export const AboutContent = () => {
       <Box sx={{ mt: "2vw" }}>
         TO BEGIN START A <b>NEW</b> PROJECT.
       </Box>
+      <Box>
+        OR <b>LOAD</b> A PRE-LOADED DEMO.
+      </Box>
     </Box>
   );
 };
