@@ -1,6 +1,6 @@
 import { palette } from "./palette";
-import commentFx from "../public/img/commentfx.png";
-import commentFxInverse from "../public/img/commentfxinverse.png";
+import commentFx from "../public/commentfx.png";
+import commentFxInverse from "../public/commentfxinverse.png";
 
 export const logoSx = {
   fontFamily: "Noto-Serif",
