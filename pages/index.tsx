@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import Head from "next/head";
 import { Splash, AOGrid } from "../components";
 import { Session } from "../types";
-import { grid } from "@mui/system";
 
 export default function Home() {
   const [gridData, setGridData] = useState<Session>();

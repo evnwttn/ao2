@@ -33,7 +33,7 @@ export const Nav = ({ gridData, handleOpenModal }: NavProps) => {
         <Button
           disableRipple
           sx={{ ...inline.logoSx.nav, textTransform: "lowercase" }}
-          onClick={() => handleOpenModal("Menu")}
+          onClick={() => window.location.reload()}
           variant="text"
           color={"inherit"}
         >
