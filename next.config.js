@@ -15,6 +15,6 @@ module.exports = {
   basePath: basePath,
   images: {
     loader: "imgix",
-    path: "evao",
+    path: "evao.imgix.net",
   },
 };
