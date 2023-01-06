@@ -1,8 +1,22 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, SetStateAction } from "react";
 import { Box, Tooltip } from "@mui/material/";
 import RemoveCircleOutlineIcon from "@mui/icons-material/RemoveCircleOutline";
 import { ColorWheel, CommentBase } from "./index";
 import { inline } from "../styles";
+import {
+  FieldValues,
+  UseFormHandleSubmit,
+  UseFormRegister,
+} from "react-hook-form";
+
+interface CellPopoverProps {
+  cell: any;
+  cellComment: string;
+  handleClick(value: SetStateAction<string>): void;
+  register: UseFormRegister<FieldValues>;
+  handleSubmit: UseFormHandleSubmit<FieldValues>;
+  onSubmit(data: any): void;
+}
 
 export const CellPopover = ({
   cell,
@@ -11,7 +25,7 @@ export const CellPopover = ({
   register,
   handleSubmit,
   onSubmit,
-}) => {
+}: CellPopoverProps) => {
   const [isPopoverOpen, setIsPopoverOpen] = useState(false);
   const [commentOpen, setCommentOpen] = useState("1");
 
