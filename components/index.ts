@@ -4,4 +4,5 @@ export { ModalBase } from "./ModalBase";
 export { ModalButton } from "./ModalButton";
 export { ModalContent } from "./ModalContent";
 export { Nav } from "./Nav";
+export { Popover } from "./Popover";
 export { Splash } from "./Splash";
