@@ -1,6 +1,4 @@
 import { palette } from "./palette";
-import commentFx from "https://i.ibb.co/sPgZLJL/commentfx.png";
-import commentFxInverse from "https://i.ibb.co/N2C02Mw/commentfxinverse.png";
 
 export const logoSx = {
   fontFamily: "Noto-Serif",
@@ -196,13 +194,13 @@ export const cellSx = {
     padding: "1.75vw",
   },
   comment: {
-    // backgroundImage: `url(${commentFx})`,
+    backgroundImage: `url("../commentfx.png")`,
     backgroundSize: "47.5%",
     backgroundRepeat: "no-repeat",
     backgroundPosition: "95% 10%",
   },
   commentInverse: {
-    // backgroundImage: `url(${commentFxInverse})`,
+    backgroundImage: `url("../commentfxinverse.png")`,
     backgroundSize: "47.5%",
     backgroundRepeat: "no-repeat",
     backgroundPosition: "95% 10%",
