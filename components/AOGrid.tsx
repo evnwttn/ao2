@@ -70,10 +70,6 @@ export const AOGrid = ({
   );
 
   useEffect(() => {
-    handleCloseModal();
-  });
-
-  useEffect(() => {
     if (cellOpen && cellClosed) {
       Object.entries(cellOpen).forEach(([key]) => {
         if (cellOpen[key] !== cellClosed[key]) {
