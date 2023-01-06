@@ -4,6 +4,10 @@ import React, { useState, useEffect } from "react";
 // import { ColorWheel, AOCommentBase } from "./index";
 // import { wheelSx } from "../assets/theme";
 
+export const Popover = () => {
+  return <></>;
+};
+
 // export const Popover = ({
 //   cell,
 //   cellComment,
