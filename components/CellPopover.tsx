@@ -4,7 +4,7 @@ import RemoveCircleOutlineIcon from "@mui/icons-material/RemoveCircleOutline";
 import { ColorWheel, CommentBase } from "./index";
 import { inline } from "../styles";
 
-export const Popover = ({
+export const CellPopover = ({
   cell,
   cellComment,
   handleClick,

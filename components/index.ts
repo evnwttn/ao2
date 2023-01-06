@@ -1,3 +1,5 @@
+export { Cell } from "./Cell";
+export { CellPopover } from "./CellPopover";
 export { ColorWheel } from "./ColorWheel";
 export { CommentBase } from "./CommentBase";
 export { CommentModal } from "./CommentModal";
@@ -7,6 +9,5 @@ export { ModalBase } from "./ModalBase";
 export { ModalButton } from "./ModalButton";
 export { ModalContent } from "./ModalContent";
 export { Nav } from "./Nav";
-export { Popover } from "./Popover";
 export { Splash } from "./Splash";
 export { Spoke } from "./Spoke";
