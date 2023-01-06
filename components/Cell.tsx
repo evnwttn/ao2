@@ -1,5 +1,5 @@
 import React, { useState, useEffect, Dispatch, SetStateAction } from "react";
-import { useForm } from "react-hook-form";
+import { FieldValues, useForm } from "react-hook-form";
 import { Box, Grid, Popover } from "@mui/material/";
 import { CellPopover } from "./index";
 import { inline, palette } from "../styles";
@@ -28,11 +28,11 @@ export const Cell = ({
   setCellOpen,
   setCellClosed,
 }: CellProps) => {
-  const { register, handleSubmit } = useForm();
-  const [cellColor, setCellColor] = useState(palette._grey);
-  const [cellComment, setCellComment] = useState("");
+  const { register, handleSubmit } = useForm<FieldValues, any>();
+  const [cellColor, setCellColor] = useState<string>(palette._grey);
+  const [cellComment, setCellComment] = useState<string>("");
   const onSubmit = (data) => setCellComment(data.comment);
-  const [anchorEl, setAnchorEl] = React.useState(null);
+  const [anchorEl, setAnchorEl] = useState<any>(null);
   const open = Boolean(anchorEl);
 
   const handleClick = (event) => {
