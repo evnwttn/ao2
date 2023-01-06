@@ -1,9 +1,9 @@
+export { AOGrid } from "./AOGrid";
 export { Cell } from "./Cell";
 export { CellPopover } from "./CellPopover";
 export { ColorWheel } from "./ColorWheel";
 export { CommentBase } from "./CommentBase";
 export { CommentModal } from "./CommentModal";
-export { Grid } from "./Grid";
 export { MainLogo } from "./MainLogo";
 export { ModalBase } from "./ModalBase";
 export { ModalButton } from "./ModalButton";

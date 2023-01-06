@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Head from "next/head";
-import { Splash, Grid } from "../components";
+import { Splash, AOGrid } from "../components";
 import { Session } from "../types";
 
 export default function Home() {
@@ -27,7 +27,7 @@ export default function Home() {
         <title>ao | album organizer</title>
       </Head>
       {gridData ? (
-        <Grid
+        <AOGrid
           gridData={gridData}
           setGridData={setGridData}
           isActiveUser={isActiveUser}

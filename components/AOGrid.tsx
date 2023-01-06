@@ -1,8 +1,15 @@
-import React, { Dispatch, SetStateAction } from "react";
-import { ThemeProvider, Box } from "@mui/material";
-import { ModalBase, Nav } from "./index";
+import React, {
+  useState,
+  useEffect,
+  useCallback,
+  Dispatch,
+  SetStateAction,
+} from "react";
+import { useForm } from "react-hook-form";
+import { Box, Grid, ThemeProvider } from "@mui/material/";
+import { inline, appTheme } from "../styles";
+import { ModalBase, Nav, Cell } from "./index";
 import { Session } from "../types";
-import { appTheme, inline } from "../styles";
 
 interface GridProps {
   gridData: Session;
@@ -16,7 +23,7 @@ interface GridProps {
   handleCloseModal(): any;
 }
 
-export const Grid = ({
+export const AOGrid = ({
   gridData,
   setGridData,
   isActiveUser,

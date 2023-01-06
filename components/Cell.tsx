@@ -4,7 +4,7 @@ import { Box, Grid, Popover } from "@mui/material/";
 import { CellPopover } from "./index";
 import { inline, palette } from "../styles";
 
-export const AOCell = ({
+export const Cell = ({
   cell,
   track,
   parameter,
