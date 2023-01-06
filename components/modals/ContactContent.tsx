@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import { TextField, IconButton, Box, CircularProgress } from "@mui/material";
 import SendIcon from "@mui/icons-material/Send";
 import { inline, palette } from "../../styles";
+import emailjs from "@emailjs/browser";
 
 interface ContactContentProps {
   handleCloseModal(): any;
@@ -18,11 +19,32 @@ export const ContactContent = ({ handleCloseModal }: ContactContentProps) => {
   const emailField = useRef<HTMLInputElement>(null);
   const messageField = useRef<HTMLInputElement>(null);
 
+  const emailTemplate = {
+    user_name: nameField,
+    user_email: emailField,
+    message: messageField,
+  };
+
   useEffect(() => {
     if (formData) {
       setFormIsLoading(true);
       handleCloseModal();
-      console.log(formData);
+
+      emailjs
+        .send(
+          "contact_service",
+          "contact_form",
+          emailTemplate,
+          process.env.EMAILJS_USER_ID
+        )
+        .then(
+          (result) => {
+            console.log(result.text);
+          },
+          (error) => {
+            console.log(error.text);
+          }
+        );
     }
   }, [formData]);
 
