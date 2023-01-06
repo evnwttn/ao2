@@ -14,7 +14,6 @@ module.exports = {
   assetPrefix: assetPrefix,
   basePath: basePath,
   images: {
-    loader: "imgix",
-    path: "ev-ao.imgix.net",
+    domains: ["i.ibb.co"],
   },
 };
