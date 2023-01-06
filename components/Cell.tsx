@@ -50,7 +50,7 @@ export const Cell = ({
   };
 
   useEffect(() => {
-    const initData = () => {
+    const initColor = () => {
       if (track.parameters) {
         track.parameters.forEach((cell) => {
           if (cell.parameter === parameter) {
@@ -62,7 +62,19 @@ export const Cell = ({
       }
     };
 
-    initData();
+    const initComment = () => {
+      if (track.parameters) {
+        track.parameters.forEach(
+          (cell) =>
+            cell.comment &&
+            cell.parameter === parameter &&
+            setCellComment(cell.comment)
+        );
+      }
+    };
+
+    initColor();
+    initComment();
   }, [parameter, track.parameters]);
 
   useEffect(() => {
