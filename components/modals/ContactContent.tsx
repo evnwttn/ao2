@@ -8,6 +8,12 @@ interface ContactContentProps {
   handleCloseModal(): any;
 }
 
+interface EmailTemplate {
+  user_name: string;
+  user_email: string;
+  message: string;
+}
+
 export const ContactContent = ({ handleCloseModal }: ContactContentProps) => {
   const [formData, setFormData] = useState<{
     name: string;
@@ -15,36 +21,21 @@ export const ContactContent = ({ handleCloseModal }: ContactContentProps) => {
     message: string;
   }>();
   const [formIsLoading, setFormIsLoading] = useState<boolean>(false);
-  const nameField = useRef<HTMLInputElement>(null);
-  const emailField = useRef<HTMLInputElement>(null);
-  const messageField = useRef<HTMLInputElement>(null);
-
-  const emailTemplate = {
-    user_name: nameField,
-    user_email: emailField,
-    message: messageField,
-  };
+  const nameField = useRef<HTMLInputElement>();
+  const emailField = useRef<HTMLInputElement>();
+  const messageField = useRef<HTMLInputElement>();
 
   useEffect(() => {
     if (formData) {
       setFormIsLoading(true);
       handleCloseModal();
 
-      emailjs
-        .send(
-          "contact_service",
-          "contact_form",
-          emailTemplate,
-          process.env.EMAILJS_USER_ID
-        )
-        .then(
-          (result) => {
-            console.log(result.text);
-          },
-          (error) => {
-            console.log(error.text);
-          }
-        );
+      emailjs.send(
+        "contact_service",
+        "contact_form",
+        formData,
+        "wZOXfbUhw_VKyHKpd"
+      );
     }
   }, [formData]);
 
