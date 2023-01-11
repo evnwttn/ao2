@@ -194,13 +194,13 @@ export const cellSx = {
     padding: "1.75vw",
   },
   comment: {
-    backgroundImage: `url("../commentfx.png")`,
+    backgroundImage: `url("../images/commentfx.png")`,
     backgroundSize: "47.5%",
     backgroundRepeat: "no-repeat",
     backgroundPosition: "95% 10%",
   },
   commentInverse: {
-    backgroundImage: `url("../commentfxinverse.png")`,
+    backgroundImage: `url("../images/commentfxinverse.png")`,
     backgroundSize: "47.5%",
     backgroundRepeat: "no-repeat",
     backgroundPosition: "95% 10%",
