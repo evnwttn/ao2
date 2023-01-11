@@ -13,4 +13,7 @@ if (isGithubActions) {
 module.exports = {
   assetPrefix: assetPrefix,
   basePath: basePath,
+  images: {
+    unoptimized: true,
+  },
 };
