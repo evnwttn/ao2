@@ -1,7 +1,7 @@
 import { palette } from "./palette";
 
 export const logoSx = {
-  fontFamily: "Noto-Serif",
+  fontFamily: "noto-serif, serif;",
   textTransform: "lowercase",
   userSelect: "none",
   msUserSelect: "none",
@@ -12,13 +12,13 @@ export const logoSx = {
   msUserSelectNone: "none",
   userSelectNone: "none",
   nav: {
-    fontFamily: "Noto-Serif",
+    fontFamily: "noto-serif, serif;",
     textDecoration: "none",
     color: palette._blue,
     fontSize: "2.5vw",
   },
   modal: {
-    fontFamily: "Noto-Serif",
+    fontFamily: "noto-serif, serif;",
     textTransform: "lowercase",
     userSelect: "none",
     msUserSelect: "none",
@@ -33,7 +33,7 @@ export const logoSx = {
     mb: "0.25vw",
   },
   main: {
-    fontFamily: "Noto-Serif",
+    fontFamily: "noto-serif, serif;",
     textTransform: "lowercase",
     userSelect: "none",
     msUserSelect: "none",
@@ -75,7 +75,7 @@ export const homeSx = {
 };
 
 export const modalFontSx = {
-  fontFamily: "Noto Sans",
+  fontFamily: "noto-sans, sans-serif;",
   fontSize: "0.8vw",
   letterSpacing: "0.125vw",
   textTransform: "uppercase",
@@ -109,7 +109,7 @@ export const circularProgressSx = {
 };
 
 export const loadModalFontSx = {
-  fontFamily: "Noto Sans",
+  fontFamily: "noto-sans, sans-serif;",
   fontSize: "0.8vw",
   letterSpacing: "0.125vw",
   fontWeight: "400",
@@ -119,7 +119,7 @@ export const loadModalFontSx = {
 };
 
 export const navMenuFontSx = {
-  fontFamily: "Noto Sans",
+  fontFamily: "noto-sans, sans-serif;",
   fontSize: "1vw",
   letterSpacing: "0.125vw",
   fontWeight: "400",
@@ -156,7 +156,7 @@ export const gridSx = {
     display: "flex",
     marginTop: "0.75vw",
     marginBottom: "1.5vw",
-    fontFamily: "Noto Sans",
+    fontFamily: "noto-sans, sans-serif;",
     fontSize: "0.8vw",
     letterSpacing: "0.125vw",
     textAlign: "center",
@@ -198,7 +198,6 @@ export const cellSx = {
     backgroundSize: "47.5%",
     backgroundRepeat: "no-repeat",
     backgroundPosition: "95% 10%",
-    objectFit: "fill",
   },
   commentInverse: {
     backgroundImage: `url("../commentfxinverse.png")`,
@@ -269,7 +268,7 @@ export const commentSx = {
     sx: {
       backgroundColor: palette._white,
       color: palette._black,
-      fontFamily: "Noto-Serif",
+      fontFamily: "noto-sans, sans-serif;",
       letterSpacing: "0.05vw",
       lineHeight: "1.75vw",
       fontSize: "1.05vw",
@@ -300,7 +299,7 @@ export const navSx = {
   text: {
     mt: "0.63vw",
     mr: "0.5vw",
-    fontFamily: "Noto Sans",
+    fontFamily: "noto-sans, sans-serif;",
     fontSize: "0.8vw",
     letterSpacing: "0.125vw",
     fontWeight: "400",
