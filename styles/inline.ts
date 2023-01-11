@@ -195,7 +195,8 @@ export const cellSx = {
   },
   comment: {
     backgroundImage: `url("../commentfx.png")`,
-    backgroundSize: "47.5%",
+    width: "47.5%",
+    height: "47.5%",
     backgroundRepeat: "no-repeat",
     backgroundPosition: "95% 10%",
   },
