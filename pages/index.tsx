@@ -28,6 +28,24 @@ export default function Home() {
       <Head>
         <meta name="viewport" content="initial-scale=1, width=device-width" />
         <meta name="theme-color" content="#272727" />
+
+        <meta property="og:title" content="ao | album organizer" key="title" />
+        <meta
+          property="og:image"
+          content="https://i.ibb.co/VwJ5V9s/Screenshot-129.png"
+          key="image"
+        />
+        <meta
+          property="og:description"
+          content="an album organizational toolkit"
+          key="description"
+        />
+        <meta
+          property="og:url"
+          content="https://ao-demo.vercel.app/"
+          key="url"
+        />
+
         <title>ao | album organizer</title>
       </Head>
       {gridData ? (
